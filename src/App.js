@@ -3,8 +3,13 @@ import axios from 'axios';
 import './App.css';
 
 export default class App extends Component {
-    state = {
-        data: {}
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            data: {}
+        };
+        this.props = {};
     }
 
     componentDidMount() {
@@ -19,22 +24,24 @@ export default class App extends Component {
         };
 
         axios(authOptions)
-        .then(function(response){
+        .then(function(response) {
             console.log(response.data);
             console.log(response.status);
+
+            this.setState((state, props) => {
+                return {data: response.data };
+            });
         })
         .catch(function(error){
             console.log(error);
         });
     }
 
-    render(){
+    render() {
         return (
             <div className="App">
               <header className="App-header">
-
-
-
+                  { JSON.stringify(this.state.data, null, 4) }
               </header>
             </div>
         );
