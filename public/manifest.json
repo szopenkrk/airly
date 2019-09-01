@@ -1,6 +1,7 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Airly pomiar",
+  "name": "Airly pomiary parametrów zamieczyszczenia",
+  "author": "Karol Kochański",
   "icons": [
     {
       "src": "favicon.ico",
